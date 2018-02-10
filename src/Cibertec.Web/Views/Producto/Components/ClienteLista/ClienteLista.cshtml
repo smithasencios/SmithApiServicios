@@ -1,0 +1,40 @@
+﻿@model Cibertec.Models.Producto
+
+<div class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+        <img src="http://www.guiatic.pe/wp-content/uploads/2017/03/cibertec.jpg" alt="...">
+        <div class="caption">
+            <Person descripcion="@Model.Descripcion" stock="@Model.StockMinimo"></Person>
+            <h3>@Model.Descripcion</h3>
+            <p>Stock :@Model.StockMinimo</p>
+            <p>
+                <a class="btn btn-primary" href='@Url.Action("Edit", "Producto", new { id= @Model.Id })' role="button">Editar</a>
+                <a class="btn btn-default" href="/Producto/Delete/@Model.Id" role="button">Eliminar</a>
+
+                <a class="btn btn-primary" target="_blank"
+                   href="@Url.Action("GetImage","Producto",new { fileName = @Model.Archivo})">
+                    Archivo
+                </a>
+            </p>
+
+        </div>
+    </div>
+</div>
+
+
+@*<tr>
+        <td>@Model.Id</td>
+        <td>@Model.Descripcion</td>
+        <td>@Model.StockMinimo</td>
+        <td>
+            <a href='@Url.Action("Edit", "Producto", new { id= @Model.Id })'>
+                <i class="glyphicon glyphicon-edit"></i>
+            </a>
+
+            <a href="/Producto/Delete/@Model.Id"><i class="glyphicon glyphicon-trash"></i></a>
+
+            <a target="_blank" href="@Url.Action("GetImage","Producto",new { fileName = @Model.Archivo})">
+                <i class="glyphicon glyphicon-download"></i>
+            </a>
+        </td>
+    </tr>*@

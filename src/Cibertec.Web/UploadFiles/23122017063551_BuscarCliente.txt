@@ -1,0 +1,16 @@
+USE [Cibertec]
+GO
+
+/****** Objeto: SqlProcedure [dbo].[BuscarProducto] Fecha del script: 23/12/2017 02:45:00 p.m. ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[BuscarProducto]
+	@texto varchar(200)
+AS
+	SELECT * from dbo.Producto d
+	where d.Descripcion like '%'+@texto+'%'
+RETURN 0

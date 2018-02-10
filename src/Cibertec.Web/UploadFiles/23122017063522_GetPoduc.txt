@@ -1,0 +1,13 @@
+USE [Cibertec]
+GO
+
+/****** Objeto: SqlProcedure [dbo].[GetProductoSinStock] Fecha del script: 23/12/2017 02:45:29 p.m. ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE [dbo].[GetProductoSinStock]
+AS
+SELECT * from dbo.Producto p where p.StockMinimo <10
